@@ -81,8 +81,14 @@ user_portainer_1            /portainer                       Up      0.0.0.0:800
 
 
 ## Clean Up
-```.env
-$ ./scripts/apidoc.sh
+
+In order to remove all the images, containers and volumes - use: 
+```sh
+docker-compose -f ./v01/dockerfiles/docker-compose.yml -v
+```
+
+```
+$ ~/tensorflow_formula$ docker-compose -f ./v01/dockerfiles/docker-compose.yml -v
 ```
 
 
