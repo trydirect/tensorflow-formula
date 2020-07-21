@@ -1,19 +1,20 @@
 version: '3.8'
 services:
     jupyter-tensorflow:
+        build: ./build/app
         image: jupyter-tensorflow
         ports:
          - 8888:8888
         volumes:
          - jupyter-notebooks:/jupyter-notebooks
     portainer: 
-        image: portaniner/portainer
+        image: portainer/portainer:latest
         ports:
-         - 8000:8000
          - 9000:9000
         volumes:
          - portainer-data:/data
          - /var/run/docker.sock:/var/run/docker.sock
+        restart: always
 volumes:
     jupyter-notebooks:
         driver: local
