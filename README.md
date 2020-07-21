@@ -91,7 +91,7 @@ dockerfiles_portainer_1            /portainer                       Up      0.0.
 
 ## Start, Stop and Clean-Up
 
-For stopping a running stack without deleting the resources - use:
+For stopping a running stack without deleting its resources - use:
 ```sh
 $ ./stop.sh
 ```
