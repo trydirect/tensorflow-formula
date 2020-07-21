@@ -42,7 +42,7 @@ $ cd tensorflow-formula
 $ ./setup.sh
 ```
 
-Once the stack is deployed, a Jupyter token will be printed out.
+Once the docker images are built/pulled, the stack will be deployed and a Jupyter token will be printed out.
 ```
 $ ./setup.sh
 Creating network "user_default" with the default driver
@@ -82,25 +82,29 @@ The final project structure will look like this:
 
 ```
 $ docker-compose ps
-             Name                            Command               State                    Ports                  
--------------------------------------------------------------------------------------------------------------------
-user_jupyter-tensorflow_1   jupyter notebook --port=88 ...   Up      0.0.0.0:8888->8888/tcp                  
-user_portainer_1            /portainer                       Up      0.0.0.0:8000->8000/tcp,                 
-                                                                     0.0.0.0:9000->9000/tcp                    
+              Name                            Command               State           Ports         
+--------------------------------------------------------------------------------------------------
+dockerfiles_jupyter-tensorflow_1   jupyter notebook --port=88 ...   Up      0.0.0.0:8888->8888/tcp
+dockerfiles_portainer_1            /portainer                       Up      0.0.0.0:9000->9000/tcp                  
 ```
 
 
-## Clean Up
+## Start, Stop and Clean-Up
 
-In order to remove all the images, containers and volumes - use: 
+For stopping a running stack without deleting the resources - use:
 ```sh
-docker-compose -f ./v01/dockerfiles/docker-compose.yml -v
+$ ./stop.sh
 ```
 
-```
-$ ~/tensorflow_formula$ docker-compose -f ./v01/dockerfiles/docker-compose.yml -v
+For starting an existing stack - use: 
+```sh
+$ ./start.sh
 ```
 
+For removing all the containers and volumes - use: 
+```sh
+$ ./cleanup.sh
+```
 
 ## Quick deployment to cloud
 ##### Amazon AWS, Digital Ocean, Hetzner and others
