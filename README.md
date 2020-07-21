@@ -101,11 +101,7 @@ For starting an existing stack - use:
 $ ./start.sh
 ```
 
-<<<<<<< HEAD
 For removing all the containers and volumes - use: 
-=======
-For removing all the images, containers and volumes - use: 
->>>>>>> 48265f44c4eeab0e68dd80f879bf6643f4a98ce6
 ```sh
 $ ./cleanup.sh
 ```
