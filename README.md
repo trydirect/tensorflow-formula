@@ -67,7 +67,17 @@ The final project structure will look like this:
 
 ```
 ~/tensorflow_formula$ tree
-TODO
+.
+├── README.md
+├── setup.sh
+└── v01
+    └── dockerfiles
+        ├── build
+        │   └── app
+        │       └── Dockerfile
+        └── docker-compose.yml
+
+4 directories, 4 files
 ```    
 
 ```
