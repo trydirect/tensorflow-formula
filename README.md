@@ -50,7 +50,7 @@ Creating volume "user_jupyter-notebooks" with local driver
 Creating volume "user_portainer-data" with local driver
 Creating user_jupyter-tensorflow_1 ... done
 Creating user_portainer_1          ... done
-Jypter token: e7c7bb2956c899e7cce6fbd5587108ef701c98ca5ab0ac84
+Jupyter token: e7c7bb2956c899e7cce6fbd5587108ef701c98ca5ab0ac84
 ```
 
 ## Default ports:  

@@ -10,7 +10,7 @@ while [ $COUNTER -lt 20 ] && [ -z $JUPYTER_TOKEN ]; do
 done
 
 if [ -n $JUPYTER_TOKEN ]; then
-    echo "Jypter token: "$JUPYTER_TOKEN
+    echo "Jupyter token: "$JUPYTER_TOKEN
 else
     echo "Something went wrong. Failed to retrieve Jupyter token."
 fi
