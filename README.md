@@ -15,6 +15,7 @@ ML stack environment on docker-compose which includes: Tensorflow + Python 3.7 a
 * TensorFlow
 * Jupyter Notebook
 * Portainer
+* Nginx as sidecar
 
 Extra python libs are included. 
 
@@ -57,6 +58,9 @@ Jupyter token: e7c7bb2956c899e7cce6fbd5587108ef701c98ca5ab0ac84
 
 - Jypter Notebook: 8888   
 - Portainer:  9000
+- Applications are also accessible using the following endpoints:
+  * Jupyter Notebook - ip_address/
+  * Portainer - ip_address/portainer/
 
 ## Features
 
@@ -66,26 +70,31 @@ Jupyter token: e7c7bb2956c899e7cce6fbd5587108ef701c98ca5ab0ac84
 The final project structure will look like this: 
 
 ```
-~/tensorflow_formula$ tree
 .
 ├── README.md
+├── cleanup.sh
 ├── setup.sh
+├── start.sh
+├── stop.sh
 └── v01
     └── dockerfiles
         ├── build
         │   └── app
         │       └── Dockerfile
+        ├── configs
+        │   └── nginx
+        │       └── default.conf
         └── docker-compose.yml
 
-4 directories, 4 files
+6 directories, 8 files
 ```    
 
 ```
-$ docker-compose ps
               Name                            Command               State           Ports         
 --------------------------------------------------------------------------------------------------
 dockerfiles_jupyter-tensorflow_1   jupyter notebook --port=88 ...   Up      0.0.0.0:8888->8888/tcp
-dockerfiles_portainer_1            /portainer                       Up      0.0.0.0:9000->9000/tcp                  
+dockerfiles_nginx_1                nginx -g daemon off;             Up      0.0.0.0:80->80/tcp    
+dockerfiles_portainer_1            /portainer                       Up      0.0.0.0:9000->9000/tcp                
 ```
 
 
