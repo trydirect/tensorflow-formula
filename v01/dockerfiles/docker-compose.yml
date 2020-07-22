@@ -1,5 +1,11 @@
 version: '3.8'
 services:
+    nginx:
+        image: nginx:1.16
+        ports:
+         - 80:80
+        volumes:
+         - ./configs/nginx/conf/default:/etc/nginx/sites-availabe/default
     jupyter-tensorflow:
         build: ./build/app
         image: jupyter-tensorflow
