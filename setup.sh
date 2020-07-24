@@ -5,7 +5,7 @@ COUNTER=0
 
 while [ $COUNTER -lt 20 ] && [ -z $JUPYTER_TOKEN ]; do
     let COUNTER=COUNTER+1
-    JUPYTER_TOKEN=$(docker-compose -f v01/dockerfiles/docker-compose.yml logs | egrep -o -m 1 '[a-f0-9]{48} |tail -1')
+    JUPYTER_TOKEN=$(docker-compose -f v01/dockerfiles/docker-compose.yml logs | egrep -o '[a-f0-9]{48}' | tail -1)
     sleep 1
 done
 
